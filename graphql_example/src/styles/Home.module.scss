@@ -1,0 +1,73 @@
+@use '../styles/variables' as *;
+
+.home {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  background: $galaxy-gradient; 
+  color: $text-color; 
+  padding: 20px;
+}
+
+.filmContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px; 
+  width: 100%;
+  max-width: 1300px; 
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+.filmCard {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  background-color: $primary-blue; 
+  border-radius: 12px; 
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  cursor: pointer;
+  
+  &:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5); 
+  }
+}
+
+.poster {
+  width: 100%;
+  max-height: 100%;
+  height: 300px;
+  max-height: 500px;
+  object-fit: cover; 
+  border-bottom: 4px solid $accent-yellow; 
+}
+
+.title {
+  font-size: 1rem; 
+  color: $accent-yellow; 
+  background-color: $primary-blue;
+  width: 100%; 
+  padding: 15px; 
+  margin: 0; 
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2); 
+  transition: background-color 0.3s ease; 
+  
+  &:hover {
+    background-color: $primary-blue;
+  }
+}
+
+@media (max-width: 768px) {
+  .filmContainer {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
+  }
+
+  .title {
+    font-size: 1rem; 
+  }
+}

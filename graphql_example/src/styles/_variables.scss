@@ -1,0 +1,23 @@
+@import url('https://fonts.cdnfonts.com/css/star-wars');
+@import url('https://fonts.cdnfonts.com/css/d-din');
+
+$font: 'Star Wars', sans-serif;
+$font2: 'D-DIN', sans-serif;
+
+$primary-dark: #0b0c10; 
+$primary-blue: #1f2833;
+$accent-yellow: #f0c808;
+$light-blue: #2b7a78; 
+$light-red: #f44336; 
+$light-green: #4caf50; 
+$light-gray: #c5c6c7; 
+$dark-gray: #4b4b4b; 
+$highlight-blue: #66fcf1;
+
+// Background and Text Colors
+$background-color: #0b0c10; 
+$text-color: #ffffff; 
+$text-muted: #b0bec5;
+
+// Gradient Example for Galaxy Background
+$galaxy-gradient: linear-gradient(180deg, #0b0c10 0%, #1f2833 50%, #0b0c10 100%);

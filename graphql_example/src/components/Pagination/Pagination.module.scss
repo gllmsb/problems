@@ -1,0 +1,32 @@
+@use '../../styles/variables' as *;
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 20px;
+  
+    button {
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #ddd;
+      cursor: pointer;
+      transition: background-color 0.2s;
+  
+      &:hover {
+        background-color: #bbb;
+      }
+  
+      &:disabled {
+        background-color: #f0f0f0;
+        cursor: not-allowed;
+      }
+    }
+  
+    .activePage {
+      font-weight: bold;
+      background-color: $accent-yellow;
+      color: $background-color;
+    }
+  }

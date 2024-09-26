@@ -1,0 +1,119 @@
+@use '../../styles/variables' as *;
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: $primary-dark;
+    color: $text-color;
+    position: relative;
+    z-index: 1000; 
+  
+    .logo {
+        display: flex; 
+        align-items: center;
+        height: 50px; 
+        width: auto; 
+    
+        .logoImage {
+          height: 40px; 
+          width: auto; 
+          object-fit: contain; 
+        }
+      }
+  
+    .menuIcon {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      transition: transform 0.5s ease;
+  
+      .bar {
+        width: 25px;
+        height: 3px;
+        background-color: $text-color;
+        margin: 4px 0;
+        transition: 0.3s ease;
+      }
+  
+      &.open {
+        
+        .bar:nth-child(1) {
+          transform: rotate(45deg) translate(5px, 10px);
+        }
+  
+        .bar:nth-child(2) {
+          opacity: 0; 
+        }
+  
+        .bar:nth-child(3) {
+          transform: rotate(-45deg) translate(5px, -12px);
+        }
+      }
+    }
+  
+    .navLinks {
+      font-family: $font2;
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 45px; 
+      right: 0;
+      width: 100%;
+      background-color: $primary-dark;
+      padding: 1rem;
+      opacity: 0;
+      transform: translateY(-20px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+  
+      li {
+        text-align: center;
+        padding: 0.5rem 0;
+  
+        a {
+          color: $text-color;
+          text-decoration: none;
+          font-size: 1.2rem;
+  
+          &:hover {
+            color: $accent-yellow;
+          }
+        }
+      }
+    }
+  
+    .active {
+      color: $accent-yellow;
+    }
+  
+    .show {
+      display: flex; 
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+
+  @media (min-width: 768px) {
+    .menuIcon {
+      display: none; 
+    }
+  
+    .navLinks {
+      display: block;
+      flex-direction: row;
+      position: static;
+      width: auto;
+      opacity: 1;
+      transform: none;
+  
+      li {
+        padding: 0 1rem;
+      }
+    }
+  }
+
+
+
+  //*Height 0 animate or transition it with a certain height
